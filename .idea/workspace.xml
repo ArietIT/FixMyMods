@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d27c03f-8c55-4de5-82d5-54d519ced6c5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/examples/missing.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plan.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/FixMyMods.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FixMyMods.iml" afterDir="false" />
+    <list default="true" id="9d27c03f-8c55-4de5-82d5-54d519ced6c5" name="Changes" comment="Initial commit #2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/examples/sample-crash-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/examples/sample-crash-report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fixmymods/analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixmymods/analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixmymods/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixmymods/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fixmymods/rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/fixmymods/rules.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_rules.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rules.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +27,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8,
-  "fromUser": false
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ArietIT&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ArietIT/FixMyMods&quot;,
+    &quot;accountId&quot;: &quot;12988fba-625c-4067-9a36-49b7b08ef25f&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3Kdgxbmompd2UXe0AehOYPRnh4R" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -46,7 +56,12 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "copilot.chat.legacySessionMetadata.migrated": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "settings.editor.selected.configurable": "com.github.copilot.settings.customization.CustomizationConfigurable",
+    "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="TaskManager">
@@ -57,11 +72,32 @@
       <option name="presentableId" value="Default" />
       <updated>1791893107326</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit #2">
+      <option name="closed" value="true" />
+      <created>1791902271644</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1791902271644</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
+    <MESSAGE value="Initial commit #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit #2" />
     <option name="LAST_CHUNK_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

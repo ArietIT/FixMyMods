@@ -1,3 +1,9 @@
+from pathlib import Path
+
+from .models import Diagnostic
+from .rules import analyze_lines
+
+
 def find_errors(path):
     try:
         with open(path, "r") as file:
@@ -12,3 +18,14 @@ def find_errors(path):
             errors.append(line)
 
     return errors
+
+
+def analyze_file(path: str | Path) -> list[Diagnostic]:
+    try:
+        lines = Path(path).read_text(
+            encoding="utf-8", errors="replace"
+        ).splitlines()
+    except FileNotFoundError:
+        return []
+
+    return analyze_lines(lines)
