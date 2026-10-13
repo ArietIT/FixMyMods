@@ -1,0 +1,4 @@
+[INFO] Minecraft starting
+[ERROR] Failed to load mod
+java.lang.RuntimeException: Missing dependency
+[INFO] Game stopped
