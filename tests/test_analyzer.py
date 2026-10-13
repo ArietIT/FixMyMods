@@ -28,3 +28,19 @@ def test_analyze_file_finds_missing_dependency(tmp_path):
 
     assert len(diagnostics) == 1
     assert diagnostics[0].rule_id == "missing-dependency"
+
+
+def test_analyze_file_finds_multiple_problems(tmp_path):
+    log_file = tmp_path / "latest.log"
+    log_file.write_text(
+        "Incompatible mods found!\n"
+        "Mod examplemod requires libexample, which is missing!\n",
+        encoding="utf-8",
+    )
+
+    diagnostics = analyze_file(log_file)
+
+    assert [diagnostic.rule_id for diagnostic in diagnostics] == [
+        "incompatible-mods",
+        "missing-dependency",
+    ]

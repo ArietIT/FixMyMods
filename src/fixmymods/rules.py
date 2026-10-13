@@ -24,16 +24,16 @@ class IncompatibleModsRule:
         return [
             Diagnostic(
                 rule_id=self.rule_id,
-                title="Incompatible mods found",
+                title="Обнаружены несовместимые моды",
                 description=(
-                    "The mod loader reported that some installed mods "
-                    "cannot be used together or with this game setup."
+                    "Загрузчик модов сообщает, что некоторые установленные "
+                    "моды несовместимы друг с другом или с этой версией игры."
                 ),
                 severity="error",
                 suggestions=(
-                    "Review the incompatibility details in the log or crash report.",
-                    "Check that each mod supports your Minecraft and mod-loader versions.",
-                    "Update, remove, or replace the mods identified by the report.",
+                    "Найдите подробности о конфликте в логе или crash-report.",
+                    "Убедитесь, что версии модов подходят для вашей версии Minecraft и загрузчика.",
+                    "Обновите, удалите или замените моды, указанные в отчёте.",
                 ),
                 evidence=evidence,
             )
@@ -57,16 +57,16 @@ class MissingDependencyRule:
         return [
             Diagnostic(
                 rule_id=self.rule_id,
-                title="Missing mod dependency",
+                title="Не найдена зависимость мода",
                 description=(
-                    "The mod loader reports that an installed mod requires "
-                    "another mod that is not present."
+                    "Загрузчик модов сообщает, что установленному моду "
+                    "требуется другой мод, которого нет."
                 ),
                 severity="error",
                 suggestions=(
-                    "Check the log or crash report for the name of the required mod.",
-                    "Install a version of that mod compatible with your Minecraft version and mod loader.",
-                    "If you do not need the mod that requires it, remove that mod instead.",
+                    "Посмотрите в логе или crash-report название требуемого мода.",
+                    "Установите его версию, совместимую с вашей версией Minecraft и загрузчика.",
+                    "Если мод, которому нужна зависимость, не требуется, удалите его.",
                 ),
                 evidence=evidence,
             )
