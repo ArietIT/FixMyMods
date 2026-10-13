@@ -1,3 +1,4 @@
+import re
 from collections.abc import Iterable, Sequence
 from typing import Protocol
 
@@ -39,7 +40,43 @@ class IncompatibleModsRule:
         ]
 
 
-DEFAULT_RULES: tuple[DiagnosticRule, ...] = (IncompatibleModsRule(),)
+class MissingDependencyRule:
+    rule_id = "missing-dependency"
+    pattern = re.compile(
+        r"\brequires\b.*\bwhich\s+is\s+missing\b",
+        re.IGNORECASE,
+    )
+
+    def analyze(self, lines: Sequence[str]) -> list[Diagnostic]:
+        evidence = tuple(
+            line for line in lines if self.pattern.search(line)
+        )
+        if not evidence:
+            return []
+
+        return [
+            Diagnostic(
+                rule_id=self.rule_id,
+                title="Missing mod dependency",
+                description=(
+                    "The mod loader reports that an installed mod requires "
+                    "another mod that is not present."
+                ),
+                severity="error",
+                suggestions=(
+                    "Check the log or crash report for the name of the required mod.",
+                    "Install a version of that mod compatible with your Minecraft version and mod loader.",
+                    "If you do not need the mod that requires it, remove that mod instead.",
+                ),
+                evidence=evidence,
+            )
+        ]
+
+
+DEFAULT_RULES: tuple[DiagnosticRule, ...] = (
+    IncompatibleModsRule(),
+    MissingDependencyRule(),
+)
 
 
 def analyze_lines(
