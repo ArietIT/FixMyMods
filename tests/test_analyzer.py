@@ -3,9 +3,7 @@ from fixmymods.analyzer import analyze_file
 
 def test_analyze_file_finds_incompatible_mods(tmp_path):
     log_file = tmp_path / "latest.log"
-    log_file.write_text(
-        "[ERROR] Incompatible mods found!\n", encoding="utf-8"
-    )
+    log_file.write_text("[ERROR] Incompatible mods found!\n", encoding="utf-8")
 
     diagnostics = analyze_file(log_file)
 
@@ -34,13 +32,27 @@ def test_analyze_file_finds_multiple_problems(tmp_path):
     log_file = tmp_path / "latest.log"
     log_file.write_text(
         "Incompatible mods found!\n"
-        "Mod examplemod requires libexample, which is missing!\n",
+        "Mod examplemod requires libexample, which is missing!\n"
+        "java.lang.ClassNotFoundException: net.example.ModClass\n",
         encoding="utf-8",
     )
 
     diagnostics = analyze_file(log_file)
 
-    assert [diagnostic.rule_id for diagnostic in diagnostics] == [
+    assert {diagnostic.rule_id for diagnostic in diagnostics} == {
         "incompatible-mods",
         "missing-dependency",
-    ]
+        "missing-java-class",
+    }
+
+
+def test_analyze_file_detects_unsupported_java_version(tmp_path):
+    log_file = tmp_path / "latest.log"
+    log_file.write_text(
+        "java.lang.IllegalArgumentException: Unsupported class file major version 61\n",
+        encoding="utf-8",
+    )
+
+    diagnostics = analyze_file(log_file)
+
+    assert any(d.rule_id == "unsupported-java-version" for d in diagnostics)
